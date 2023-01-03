@@ -1,0 +1,32 @@
+states:
+noAlerts (starting state)
+belowLimit
+aboveLimit
+aboveLimitReturned
+
+variables:
+int alertCount
+boolean validCredentials
+
+transitions:
+noAlerts -> belowLimit	counting \ validCredentials == true \ alertCount++
+noAlerts -> noAlerts	counting \ validCredentials == false \
+belowLimit -> belowLimit	counting \ validCredentials == true && alertCount < 4 \ alertCount++
+belowLimit -> belowLimit 	counting \ validCredentials == false
+belowLimit -> aboveLimit	counting \ validCredentials == true && alertCount > 4\ alertCount++
+aboveLimit -> aboveLimit	counting \ validCredentials == true && alertCount > 4\ alertCount++
+aboveLimit -> aboveLimit 	counting \ validCredentials == false
+
+noAlerts -> noAlerts deleted \ validCredentials == true \ alertCount = 0
+noAlerts -> noAlerts deleted \ validCredentials == false \
+belowLimit -> noAlerts deleted \ validCredentials == true \ alertCount = 0
+belowLimit -> belowLimit deleted \ validCredentials == false \
+aboveLimit -> noAlerts deleted \ validCredentials == true \ alertCount = 0
+aboveLimit -> aboveLimit deleted \ validCredentials == false \
+
+noAlerts -> noAlerts returned \ validCredentials == true && alertsReturned == 0\
+noAlerts -> noAlerts returned \ validCredentials == false\
+belowLimit -> belowLimit returned \ validCredentials == true && alertsReturned < 6\
+belowLimit -> belowLimit returned \ validCredentials == false\
+aboveLimit -> aboveLimit returned \ validCredentials == false\
+aboveLimit -> aboveLimitReturned returned \ validCredentials == true && alertsReturned > 5\

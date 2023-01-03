@@ -1,0 +1,11 @@
+states:
+-loggedOut (starting state)
+-loggedIn
+
+variables:
+
+transitions:
+[beginning state -> resulting state] (action)
+-loggedOut -> loggedIn: validLogin
+-loggedIn -> loggedOut: logout
+-loggedOut -> loggedOut: invalidLogin
