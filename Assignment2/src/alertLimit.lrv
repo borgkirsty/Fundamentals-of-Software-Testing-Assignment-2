@@ -1,0 +1,62 @@
+%%Making sure there are not more than 5 alerts
+
+GLOBAL {
+	VARIABLES {
+		int alertCount = 0; 
+		boolean validCredentials = true; 
+	}
+	
+	EVENTS{
+		counting() = {*.postAlerts()}
+		returned(int alertsReturned) = {*.alertLimitCheck(alertsReturned)}
+		%%numReturnedAlerts() = {*.alertLimitCheck()}
+		deleted() = {*.deleteAlerts()}
+	}
+	
+	PROPERTY badLoginsProperty{
+		STATES{
+			ACCEPTING{
+				belowLimit
+			}
+			BAD{
+				aboveLimitReturned
+			}
+			NORMAL{
+				%%returningAlerts
+				aboveLimit
+			}
+			STARTING{
+				noAlerts
+			}
+		}
+		
+		TRANSITIONS{
+			noAlerts -> belowLimit	[counting\validCredentials == true\ alertCount++; System.out.println("Alert Created. Current number of alerts: "+alertCount);]
+			noAlerts -> noAlerts	[counting\validCredentials == false\ System.out.println("Invalid Credentials!");]
+			belowLimit -> belowLimit	[counting\validCredentials == true && alertCount < 4\ alertCount++; System.out.println("Alert Created. Current number of alerts: "+alertCount);]
+			belowLimit -> belowLimit 	[counting\validCredentials == false\ System.out.println("Invalid Credentials!");]
+			belowLimit -> aboveLimit	[counting\validCredentials == true && alertCount > 4\ alertCount++; System.out.println("Alert Created. Current number of alerts: "+alertCount);] 
+			aboveLimit -> aboveLimit	[counting\validCredentials == true && alertCount > 4\ alertCount++; System.out.println("Alert Created. Current number of alerts: "+alertCount);]
+			aboveLimit -> aboveLimit 	[counting\validCredentials == false\ System.out.println("Invalid Credentials!");]
+			
+			noAlerts -> noAlerts [deleted\validCredentials == true\ alertCount = 0; System.out.println("Alerts Deleted!");]
+			noAlerts -> noAlerts [deleted\validCredentials == false\ System.out.println("Invalid Credentials!");]
+			belowLimit -> noAlerts [deleted\validCredentials == true\ alertCount = 0; System.out.println("Alerts Deleted!");]
+			belowLimit -> belowLimit [deleted\validCredentials == false\ System.out.println("Invalid Credentials!");]
+			aboveLimit -> noAlerts [deleted\validCredentials == true\ alertCount = 0; System.out.println("Alerts Deleted!");]
+			aboveLimit -> aboveLimit [deleted\validCredentials == false\ System.out.println("Invalid Credentials!");]
+			
+			noAlerts -> noAlerts [returned\validCredentials == true && alertsReturned == 0\ System.out.println("No Alerts Found!");]
+			noAlerts -> noAlerts [returned\validCredentials == false\ System.out.println("Invalid Credentials!");]
+			belowLimit -> belowLimit [returned\validCredentials == true && alertsReturned < 6\ System.out.println("Returning Alerts.");]
+			belowLimit -> belowLimit [returned\validCredentials == false\ System.out.println("Invalid Credentials!");]
+			aboveLimit -> aboveLimit [returned\validCredentials == false\ System.out.println("Invalid Credentials!");]
+			aboveLimit -> aboveLimitReturned [returned\ validCredentials == true && alertsReturned > 5\ System.out.println("Returning Alerts.");]
+			
+			%%returningAlerts -> belowLimit [numReturnedAlerts\alertsReturned < 6\ System.out.println(alertsReturned + " alerts returned.");]
+			%%returningAlerts -> aboveLimitReturned [numReturnedAlerts\alertsReturned > 5\ System.out.println(alertsReturned + " alerts returned. Limit Exceeded!");]
+			
+			
+		}
+	}
+}

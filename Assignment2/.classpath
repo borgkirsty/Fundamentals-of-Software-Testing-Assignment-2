@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.ajdt.core.ASPECTJRT_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/rxjava-2.2.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/reactive-streams-1.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/jna-platform-5.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/jna-5.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/httpcore5-testing-5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/httpcore5-reactive-5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/httpcore5-h2-5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/httpcore5-5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/httpclient5-win-5.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/httpclient5-testing-5.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/httpclient5-fluent-5.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/httpclient5-cache-5.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/httpclient5-5.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/commons-codec-1.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-client-5.1.4-bin/lib/commons-cli-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/slf4j-nop.jar/slf4j-nop-1.6.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/commons-logging-1.2-bin/commons-logging-1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/commons-logging-1.2-bin/commons-logging-1.2/commons-logging-1.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-core-5.1.5-bin/lib/commons-cli-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-core-5.1.5-bin/lib/httpcore5-5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-core-5.1.5-bin/lib/httpcore5-h2-5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-core-5.1.5-bin/lib/httpcore5-reactive-5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-core-5.1.5-bin/lib/httpcore5-testing-5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-core-5.1.5-bin/lib/reactive-streams-1.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-core-5.1.5-bin/lib/rxjava-2.2.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/httpcomponents-core-5.1.5-bin/lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/gson/gson-2.8.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/json/javax.json-api-1.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/borgk/OneDrive/workspace/dependencies/json/javax.json-1.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

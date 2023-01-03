@@ -1,0 +1,22 @@
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>noAlerts
+Alerts Deleted!
+[badLoginsProperty]MOVED ON METHODCALL: void main.Api.deleteAlerts() TO STATE::> noAlerts
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>noAlerts
+Alert Created. Current number of alerts: 1
+[badLoginsProperty]MOVED ON METHODCALL: void main.Api.postAlerts() TO STATE::> (((SYSTEM REACHED AN ACCEPTED STATE)))  belowLimit
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>belowLimit
+Alert Created. Current number of alerts: 2
+[badLoginsProperty]MOVED ON METHODCALL: void main.Api.postAlerts() TO STATE::> (((SYSTEM REACHED AN ACCEPTED STATE)))  belowLimit
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>belowLimit
+Alert Created. Current number of alerts: 3
+[badLoginsProperty]MOVED ON METHODCALL: void main.Api.postAlerts() TO STATE::> (((SYSTEM REACHED AN ACCEPTED STATE)))  belowLimit
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>belowLimit
+Alert Created. Current number of alerts: 4
+[badLoginsProperty]MOVED ON METHODCALL: void main.Api.postAlerts() TO STATE::> (((SYSTEM REACHED AN ACCEPTED STATE)))  belowLimit
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>belowLimit
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>belowLimit
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>belowLimit
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>belowLimit
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>belowLimit
+Returning Alerts.
+[badLoginsProperty]MOVED ON METHODCALL: void main.Api.alertLimitCheck(int) TO STATE::> (((SYSTEM REACHED AN ACCEPTED STATE)))  belowLimit

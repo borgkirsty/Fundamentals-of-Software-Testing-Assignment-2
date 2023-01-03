@@ -1,0 +1,6 @@
+[LoginProperty]AUTOMATON::> LoginProperty() STATE::>loggedOut
+Invalid Login observed.
+[LoginProperty]MOVED ON METHODCALL: void main.Api.invalidLogin() TO STATE::> loggedOut
+[LoginProperty]AUTOMATON::> LoginProperty() STATE::>loggedOut
+Valid Login observed
+[LoginProperty]MOVED ON METHODCALL: void main.Api.validLogin() TO STATE::> (((SYSTEM REACHED AN ACCEPTED STATE)))  loggedIn

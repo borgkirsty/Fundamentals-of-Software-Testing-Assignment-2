@@ -1,0 +1,10 @@
+digraph _logic_LoginProperty {
+rankdir=LR;
+node [shape = doublecircle]; loggedIn;
+node [shape = circle]; loggedOut;
+node [shape = point]; _s_s;
+_s_s -> loggedOut;
+loggedIn -> loggedOut [ label = "(1) loggingOut\\\\System . out . println ( \" Log Out observed \" ) ; "];
+loggedOut -> loggedOut [ label = "(1) invalidLogin\\\\System . out . println ( \" Invalid Login observed. \" ) ; "];
+loggedOut -> loggedIn [ label = "(2) validLogin\\\\System . out . println ( \" Valid Login observed \" ) ; "];
+}

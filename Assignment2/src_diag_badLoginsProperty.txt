@@ -1,0 +1,27 @@
+digraph _logic_badLoginsProperty {
+rankdir=LR;
+node [shape = doublecircle]; belowLimit;
+node [shape = circle]; aboveLimit noAlerts;
+node [shape = octagon]; aboveLimitReturned;
+node [shape = point]; _s_s;
+_s_s -> noAlerts;
+noAlerts -> belowLimit [ label = "(1) counting\\validCredentials == true \\alertCount ++ ; System . out . println ( \" Alert Created. Current number of alerts:  \" + alertCount ) ; "];
+noAlerts -> noAlerts [ label = "(2) counting\\validCredentials == false \\System . out . println ( \" Invalid Credentials! \" ) ; "];
+noAlerts -> noAlerts [ label = "(3) deleted\\validCredentials == true \\alertCount = 0 ; System . out . println ( \" Alerts Deleted! \" ) ; "];
+noAlerts -> noAlerts [ label = "(4) deleted\\validCredentials == false \\System . out . println ( \" Invalid Credentials! \" ) ; "];
+noAlerts -> noAlerts [ label = "(5) returned\\validCredentials == true && alertsReturned == 0 \\System . out . println ( \" No Alerts Found! \" ) ; "];
+noAlerts -> noAlerts [ label = "(6) returned\\validCredentials == false \\System . out . println ( \" Invalid Credentials! \" ) ; "];
+belowLimit -> belowLimit [ label = "(1) counting\\validCredentials == true && alertCount < 4 \\alertCount ++ ; System . out . println ( \" Alert Created. Current number of alerts:  \" + alertCount ) ; "];
+belowLimit -> belowLimit [ label = "(2) counting\\validCredentials == false \\System . out . println ( \" Invalid Credentials! \" ) ; "];
+belowLimit -> aboveLimit [ label = "(3) counting\\validCredentials == true && alertCount > 4 \\alertCount ++ ; System . out . println ( \" Alert Created. Current number of alerts:  \" + alertCount ) ; "];
+belowLimit -> noAlerts [ label = "(4) deleted\\validCredentials == true \\alertCount = 0 ; System . out . println ( \" Alerts Deleted! \" ) ; "];
+belowLimit -> belowLimit [ label = "(5) deleted\\validCredentials == false \\System . out . println ( \" Invalid Credentials! \" ) ; "];
+belowLimit -> belowLimit [ label = "(6) returned\\validCredentials == true && alertsReturned < 6 \\System . out . println ( \" Returning Alerts. \" ) ; "];
+belowLimit -> belowLimit [ label = "(7) returned\\validCredentials == false \\System . out . println ( \" Invalid Credentials! \" ) ; "];
+aboveLimit -> aboveLimit [ label = "(1) counting\\validCredentials == true && alertCount > 4 \\alertCount ++ ; System . out . println ( \" Alert Created. Current number of alerts:  \" + alertCount ) ; "];
+aboveLimit -> aboveLimit [ label = "(2) counting\\validCredentials == false \\System . out . println ( \" Invalid Credentials! \" ) ; "];
+aboveLimit -> noAlerts [ label = "(3) deleted\\validCredentials == true \\alertCount = 0 ; System . out . println ( \" Alerts Deleted! \" ) ; "];
+aboveLimit -> aboveLimit [ label = "(4) deleted\\validCredentials == false \\System . out . println ( \" Invalid Credentials! \" ) ; "];
+aboveLimit -> aboveLimit [ label = "(5) returned\\validCredentials == false \\System . out . println ( \" Invalid Credentials! \" ) ; "];
+aboveLimit -> aboveLimitReturned [ label = "(6) returned\\validCredentials == true && alertsReturned > 5 \\System . out . println ( \" Returning Alerts. \" ) ; "];
+}

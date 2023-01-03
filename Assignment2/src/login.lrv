@@ -1,0 +1,30 @@
+%%Making sure login/logout works
+
+GLOBAL {
+	VARIABLES {
+	}
+	
+	EVENTS{
+		invalidLogin() = {*.invalidLogin()}
+		validLogin() = {*.validLogin()}
+		loggingOut() =  {*.LogOut()}
+		
+	}
+	
+	PROPERTY LoginProperty{
+		STATES{
+			ACCEPTING{
+				loggedIn
+			}
+			STARTING{
+				loggedOut
+			}
+		}
+		
+		TRANSITIONS{
+			loggedOut -> loggedOut  [invalidLogin\\ System.out.println("Invalid Login observed.");]
+			loggedOut -> loggedIn 	[validLogin\\ System.out.println("Valid Login observed");]
+			loggedIn -> loggedOut 	[loggingOut()\\System.out.println("Log Out observed");]
+			}
+	}
+}
